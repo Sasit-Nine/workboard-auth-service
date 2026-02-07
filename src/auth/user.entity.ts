@@ -24,9 +24,6 @@ export class User {
   @Column()
   displayName: string;
 
-  @Column({ default: 'member' })
-  role: 'owner' | 'member';
-
   @Column({ default: true })
   isActive: boolean;
 
