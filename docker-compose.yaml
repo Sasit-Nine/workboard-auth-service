@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db-auth-workboard:
+    image: mysql:8.0
+    container_name: auth-workboard-db
+    environment:
+      MYSQL_DATABASE: workboard-auth-db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3320:3306"
+    volumes:
+      - db-auth-workboard-data:/var/lib/mysql
+
+volumes:
+  db-auth-workboard-data:
