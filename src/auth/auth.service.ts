@@ -66,4 +66,9 @@ export class AuthService {
       access_token: this.jwtService.sign(payload),
     };
   }
+
+  async checkUserByEmail(email: string): Promise<boolean> {
+    const user = await this.userRepository.findOne({ where: { email } });
+    return !!user;
+  }
 }

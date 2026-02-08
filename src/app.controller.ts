@@ -20,4 +20,9 @@ export class AppController {
   login(@Body() data: LoginRequest) {
     return this.authService.login(data);
   }
+
+  @Post('api/auth-service/check-user-by-email')
+  checkUserByEmail(@Body() data: { email: string }) {
+    return this.authService.checkUserByEmail(data.email);
+  }
 }
